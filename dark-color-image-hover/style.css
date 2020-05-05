@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #333333;
+}
+
+.image {
+    width: 260px;
+    overflow: hidden;
+    height: 80vh;
+    cursor: pointer;
+    position: relative;
+    margin: 0 20px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* i know */
+
+.image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: black;
+    z-index: -100; */
+    /* new */
+    background-size: cover;
+    filter: grayscale(100%);
+    transition: .6s linear;
+}
+
+
+/* new */
+
+.image:hover::before {
+    width: 0;
+}
+
+.image:nth-child(1)::before {
+    background-image: url(./1.jpg);
+}
+
+.image:nth-child(2)::before {
+    background-image: url(./2.jpg);
+}
+
+.image:nth-child(3)::before {
+    background-image: url(./3.jpg);
+}
